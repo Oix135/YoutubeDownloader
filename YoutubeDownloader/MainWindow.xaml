@@ -1,0 +1,44 @@
+﻿<Window x:Class="YoutubeDownloader.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" DataContext="{StaticResource VM}"
+        Title="Youtube Downloader" Height="680" Width="1200"
+        MinHeight="680" MinWidth="1200">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <TextBlock Text="Youtube Downloader" HorizontalAlignment="Center" Margin="20"
+                   FontFamily="{StaticResource customFont}" FontSize="36" FontWeight="Bold"/>
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <TextBlock Text="Ссылка: " Width="220" FontSize="24" FontFamily="{StaticResource customFont}" />
+                <TextBox Width="800" FontSize="24" Text="{Binding Link, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <TextBlock Text="Папка для сохранения: " Width="220" FontFamily="{StaticResource customFont}" />
+                <TextBox Width="800" Text="{Binding Path, UpdateSourceTrigger=PropertyChanged}"/>
+                <Button Content="..." Width="32" Height="32" VerticalAlignment="Center"
+                        Command="{Binding OpenFolderCommand}"/>
+            </StackPanel>
+            <TextBlock Text="{Binding ProgressText, UpdateSourceTrigger=PropertyChanged}" FontSize="24" HorizontalAlignment="Left"
+                       Margin="10"/>
+            <UniformGrid Columns="2" Width="240" Margin="5">
+                <TextBlock Text="Битрейт"/>
+                <ComboBox Width="120" Background="{StaticResource backBrush}" VerticalAlignment="Center"
+                          ItemsSource="{Binding LstBitrate, UpdateSourceTrigger=PropertyChanged}"
+                          SelectedItem="{Binding SelectedBitrate, UpdateSourceTrigger=PropertyChanged}"/>
+            </UniformGrid>
+            <Button Content="Описание" Width="120" Height="32" VerticalAlignment="Center"
+                    Command="{Binding GetDescriptionCommand}" Margin="5"/>
+            <Button Content="Скачать" Width="120" Height="32" VerticalAlignment="Center"
+                    Command="{Binding DownloadCommand}" Margin="5"/>
+        </StackPanel>
+        <TextBox IsReadOnly="True" TextWrapping="Wrap" AcceptsReturn="True" VerticalAlignment="Stretch"
+         Margin="5" FontSize="22" 
+         Text="{Binding Description, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1"/>
+    </Grid>
+</Window>

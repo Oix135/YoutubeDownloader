@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>youtube_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Fonts\Cornerita-VF.ttf" />
+    <None Remove="Fonts\MorfinSans-Regular.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="youtube_icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Ookii.Dialogs.Wpf" Version="5.0.1" />
+    <PackageReference Include="ReactiveUI.WPF" Version="18.4.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="YoutubeDownloaderRU">
+      <HintPath>..\..\YoutubeDownloaderRU.v2.38\YoutubeDownloaderRU\YoutubeDownloaderRU.dll</HintPath>
+    </Reference>
+    <Reference Include="YoutubeExplode">
+      <HintPath>..\..\YoutubeDownloaderRU.v2.38\YoutubeDownloaderRU\YoutubeExplode.dll</HintPath>
+    </Reference>
+    <Reference Include="YoutubeExplode.Converter">
+      <HintPath>..\..\YoutubeDownloaderRU.v2.38\YoutubeDownloaderRU\YoutubeExplode.Converter.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Fonts\Cornerita-VF.ttf" />
+    <Resource Include="Fonts\MorfinSans-Regular.ttf" />
+  </ItemGroup>
+
+</Project>
