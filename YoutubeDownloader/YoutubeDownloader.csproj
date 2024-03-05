@@ -24,9 +24,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="YoutubeDownloaderRU">
-      <HintPath>..\..\YoutubeDownloaderRU.v2.38\YoutubeDownloaderRU\YoutubeDownloaderRU.dll</HintPath>
-    </Reference>
     <Reference Include="YoutubeExplode">
       <HintPath>..\..\YoutubeDownloaderRU.v2.38\YoutubeDownloaderRU\YoutubeExplode.dll</HintPath>
     </Reference>
